@@ -7,6 +7,8 @@
 > 职场权力博弈策略分析 —— 一个 Claude Code Skill。
 > 用博弈论拆解"怎么和领导相处"：目标不是赢一场冲突，而是在长期重复博弈中改善你的结构性处境。
 
+**中文 | [English](README_EN.md)**
+
 ## 它是什么
 
 一个装在 Claude Code 里的职场策略分析技能。当你遇到超额任务分派、扣工资扣绩效、考核威胁、成果侵占、被逼离职这类结构性矛盾时，它不会给你"和为贵"的鸡汤，而是把你的处境拆成一盘棋：**你手里有什么牌，对方的武器依赖什么前提，哪张牌先出、哪张永远握在手里。**
@@ -62,19 +64,38 @@ flowchart TD
 
 ## 安装
 
-**方式一：放到用户级 skills 目录（所有项目可用）**
+本技能遵循 [Agent Skills 开放标准](https://agentskills.io)，纯 Markdown 指令、无脚本依赖，任何兼容该标准的 agent 均可直接使用——只需把整个 skill 目录放进对应 agent 的 skills 目录。
 
 ```bash
-# 克隆后把 SKILL.md 所在目录复制到 Claude Code 用户 skills 目录
 git clone https://github.com/peter5991/workplace-game-strategy.git
-# Windows: 复制 workplace-game-strategy 目录到 %USERPROFILE%\.claude\skills\
-# macOS/Linux: 复制到 ~/.claude/skills/
-cp -r workplace-game-strategy ~/.claude/skills/
+cd workplace-game-strategy
 ```
 
-**方式二：项目级使用** —— 把 `SKILL.md` 所在目录复制到项目的 `.claude/skills/` 下。
+**Claude Code**
 
-安装后在 Claude Code 中直接描述你的处境即可触发，例如："我是高校老师，领导把全院报销的活都塞给我，怎么办？"
+```bash
+# 用户级（所有项目可用）
+# Windows: 复制 SKILL.md 所在目录到 %USERPROFILE%\.claude\skills\workplace-game-strategy\
+# macOS/Linux:
+mkdir -p ~/.claude/skills/workplace-game-strategy && cp SKILL.md ~/.claude/skills/workplace-game-strategy/
+
+# 项目级：复制到项目的 .claude/skills/workplace-game-strategy/ 下
+```
+
+**Codex（OpenAI）**
+
+```bash
+# 用户级
+# Windows: 复制 SKILL.md 所在目录到 %USERPROFILE%\.codex\skills\workplace-game-strategy\
+# macOS/Linux:
+mkdir -p ~/.codex/skills/workplace-game-strategy && cp SKILL.md ~/.codex/skills/workplace-game-strategy/
+
+# 项目级：复制到项目的 .codex/skills/workplace-game-strategy/ 下
+```
+
+安装后直接描述你的处境即可触发，例如："我是高校老师，领导把全院报销的活都塞给我，怎么办？"
+
+> 提示：其他兼容 Agent Skills 标准的 agent（OpenCode、Cursor、Goose 等）同理，把目录放进各自的 skills 路径即可。若所用模型对长指令遵循度较弱，出现不照"开场引导→分型→诊断"流程走的情况，属于模型行为差异而非格式问题。
 
 ## 设计原则
 
