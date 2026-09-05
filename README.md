@@ -66,6 +66,8 @@ flowchart TD
 
 本技能遵循 [Agent Skills 开放标准](https://agentskills.io)，纯 Markdown 指令、无脚本依赖，任何兼容该标准的 agent 均可直接使用——只需把整个 skill 目录放进对应 agent 的 skills 目录。
 
+> **安装建议：本技能属于低频触发技能（遇到职场矛盾才用得上），推荐项目级安装、按需使用**——单独建一个目录（如 `~/workplace-advice/`）作为固定的"咨询室"，把 skill 装进该目录的 `.claude/skills/`（或 `.codex/skills/`），需要时在该目录下启动 agent 对话即可。不建议装到用户级：description 会常驻每次启动的技能索引，白白占用上下文。
+
 ```bash
 git clone https://github.com/peter5991/workplace-game-strategy.git
 cd workplace-game-strategy
@@ -74,23 +76,25 @@ cd workplace-game-strategy
 **Claude Code**
 
 ```bash
+# 项目级（推荐）：复制到项目的 .claude/skills/workplace-game-strategy/ 下
+mkdir -p .claude/skills/workplace-game-strategy && cp SKILL.md .claude/skills/workplace-game-strategy/
+
 # 用户级（所有项目可用）
 # Windows: 复制 SKILL.md 所在目录到 %USERPROFILE%\.claude\skills\workplace-game-strategy\
 # macOS/Linux:
 mkdir -p ~/.claude/skills/workplace-game-strategy && cp SKILL.md ~/.claude/skills/workplace-game-strategy/
-
-# 项目级：复制到项目的 .claude/skills/workplace-game-strategy/ 下
 ```
 
 **Codex（OpenAI）**
 
 ```bash
+# 项目级（推荐）：复制到项目的 .codex/skills/workplace-game-strategy/ 下
+mkdir -p .codex/skills/workplace-game-strategy && cp SKILL.md .codex/skills/workplace-game-strategy/
+
 # 用户级
 # Windows: 复制 SKILL.md 所在目录到 %USERPROFILE%\.codex\skills\workplace-game-strategy\
 # macOS/Linux:
 mkdir -p ~/.codex/skills/workplace-game-strategy && cp SKILL.md ~/.codex/skills/workplace-game-strategy/
-
-# 项目级：复制到项目的 .codex/skills/workplace-game-strategy/ 下
 ```
 
 安装后直接描述你的处境即可触发，例如："我是高校老师，领导把全院报销的活都塞给我，怎么办？"

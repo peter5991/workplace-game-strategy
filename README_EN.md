@@ -68,6 +68,8 @@ The skill activates when you say things like:
 
 This skill follows the [Agent Skills open standard](https://agentskills.io) — pure Markdown instructions, no scripts or tool dependencies. Any compatible agent can use it as-is: just drop the skill folder into the agent's skills directory.
 
+> **Install recommendation: this is a low-frequency skill (you only need it when a workplace conflict arises), so prefer project-level installation and use it on demand.** Create a dedicated "consulting room" directory (e.g. `~/workplace-advice/`), place the skill under its `.claude/skills/` (or `.codex/skills/`), and start your agent session in that directory when needed. User-level installation is not recommended: the description would sit in the skill index at every startup, costing context for nothing.
+
 ```bash
 git clone https://github.com/peter5991/workplace-game-strategy.git
 cd workplace-game-strategy
@@ -76,23 +78,25 @@ cd workplace-game-strategy
 **Claude Code**
 
 ```bash
+# Project-level (recommended): copy into your project's .claude/skills/workplace-game-strategy/
+mkdir -p .claude/skills/workplace-game-strategy && cp SKILL.md .claude/skills/workplace-game-strategy/
+
 # User-level (available in all projects)
 # Windows: copy the folder containing SKILL.md to %USERPROFILE%\.claude\skills\workplace-game-strategy\
 # macOS/Linux:
 mkdir -p ~/.claude/skills/workplace-game-strategy && cp SKILL.md ~/.claude/skills/workplace-game-strategy/
-
-# Project-level: copy into your project's .claude/skills/workplace-game-strategy/
 ```
 
 **Codex (OpenAI)**
 
 ```bash
+# Project-level (recommended): copy into your project's .codex/skills/workplace-game-strategy/
+mkdir -p .codex/skills/workplace-game-strategy && cp SKILL.md .codex/skills/workplace-game-strategy/
+
 # User-level
 # Windows: copy the folder containing SKILL.md to %USERPROFILE%\.codex\skills\workplace-game-strategy\
 # macOS/Linux:
 mkdir -p ~/.codex/skills/workplace-game-strategy && cp SKILL.md ~/.codex/skills/workplace-game-strategy/
-
-# Project-level: copy into your project's .codex/skills/workplace-game-strategy/
 ```
 
 Then just describe your situation, e.g. "I'm a university lecturer and my dean dumped the whole department's expense-report work on me — what do I do?"
