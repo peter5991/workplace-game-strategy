@@ -1,9 +1,14 @@
 ---
 name: workplace-game-strategy
-description: 用博弈论、统战价值理论、退出-发声-忠诚框架、权力依赖理论、劳动法规则地形与人力资本理论，分析职场/组织内的权力关系与相处策略。覆盖两类用户：一类是手中握有稀缺价值者（高层次人才、科研骨干、有编制或外部资源者），用六模块框架组装策略；一类是普通打工人（无统战价值、被扣工资扣绩效、被压榨），用"退出权＋法律规则地形＋声誉机制＋人力资本通用化"框架。先用小额交易测试诊断对手类型（可争取型/纯榨取型），极端对手切换为"防火墙＋退出通道＋证据链"防御模式。当用户提到"怎么和领导相处""被老板压榨""扣工资扣绩效""领导穿小鞋""被安排额外工作""考核被卡""要不要仲裁/找关系""如何拒绝又不撕破脸""职场被压榨怎么办"等场景时触发。
+description: 用博弈论、统战价值理论、退出-发声-忠诚框架、权力依赖理论、劳动法规则地形与人力资本理论，分析职场/组织内的权力关系与相处策略。覆盖两类用户：一类是手中握有稀缺价值者（高层次人才、科研骨干、有编制或外部资源者），用六模块框架组装策略；一类是普通打工人（无统战价值、被扣工资扣绩效、被压榨），用"退出权＋法律规则地形＋声誉机制＋人力资本通用化"框架。先用小额交易测试诊断对手类型（可争取型/纯榨取型），极端对手切换为"防火墙＋退出通道＋证据链"防御模式。当用户提到"怎么和领导相处""被老板压榨""扣工资扣绩效""领导穿小鞋""被安排额外工作""考核被卡""要不要仲裁/找关系""如何拒绝又不撕破脸""职场被压榨怎么办"等场景时触发。Also triggers on English queries about workplace power dynamics and strategy: "dealing with a difficult boss", "my manager is sabotaging me", "withheld pay or bonus", "forced to resign", "workplace exploitation", "how to refuse extra work without conflict", "credit stolen for my work", "should I file for arbitration". Bilingual skill: responds in the user's language — see the Language section at the top of this file.
 ---
 
 # 职场权力博弈策略分析
+
+## 语言路由 / Language（最先执行 / read first）
+
+- 用户使用**中文**提问 → 按本文件执行，全程用中文输出。
+- User writes in **any language other than Chinese** → stop reading this file now, load `references/SKILL_EN.md`, follow it instead, and respond entirely in the user's language.
 
 ## 适用场景
 

@@ -11,7 +11,9 @@
 
 ## 它是什么
 
-一个装在 Claude Code 里的职场策略分析技能。当你遇到超额任务分派、扣工资扣绩效、考核威胁、成果侵占、被逼离职这类结构性矛盾时，它不会给你"和为贵"的鸡汤，而是把你的处境拆成一盘棋：**你手里有什么牌，对方的武器依赖什么前提，哪张牌先出、哪张永远握在手里。**
+一个装在 agent 里的职场策略分析技能。当你遇到超额任务分派、扣工资扣绩效、考核威胁、成果侵占、被逼离职这类结构性矛盾时，它不会给你"和为贵"的鸡汤，而是把你的处境拆成一盘棋：**你手里有什么牌，对方的武器依赖什么前提，哪张牌先出、哪张永远握在手里。**
+
+**双语支持**：技能按用户提问语言自动切换——中文提问走中文版框架（SKILL.md），其他语言自动加载英文版框架（`references/SKILL_EN.md`），全程用用户语言输出。
 
 ## 核心理论框架
 
@@ -76,25 +78,25 @@ cd workplace-game-strategy
 **Claude Code**
 
 ```bash
-# 项目级（推荐）：复制到项目的 .claude/skills/workplace-game-strategy/ 下
-mkdir -p .claude/skills/workplace-game-strategy && cp SKILL.md .claude/skills/workplace-game-strategy/
+# 项目级（推荐）：SKILL.md 与 references/ 一起复制到项目的 .claude/skills/workplace-game-strategy/
+mkdir -p .claude/skills/workplace-game-strategy && cp -r SKILL.md references .claude/skills/workplace-game-strategy/
 
 # 用户级（所有项目可用）
-# Windows: 复制 SKILL.md 所在目录到 %USERPROFILE%\.claude\skills\workplace-game-strategy\
+# Windows: 复制 SKILL.md 与 references/ 到 %USERPROFILE%\.claude\skills\workplace-game-strategy\
 # macOS/Linux:
-mkdir -p ~/.claude/skills/workplace-game-strategy && cp SKILL.md ~/.claude/skills/workplace-game-strategy/
+mkdir -p ~/.claude/skills/workplace-game-strategy && cp -r SKILL.md references ~/.claude/skills/workplace-game-strategy/
 ```
 
 **Codex（OpenAI）**
 
 ```bash
 # 项目级（推荐）：复制到项目的 .codex/skills/workplace-game-strategy/ 下
-mkdir -p .codex/skills/workplace-game-strategy && cp SKILL.md .codex/skills/workplace-game-strategy/
+mkdir -p .codex/skills/workplace-game-strategy && cp -r SKILL.md references .codex/skills/workplace-game-strategy/
 
 # 用户级
-# Windows: 复制 SKILL.md 所在目录到 %USERPROFILE%\.codex\skills\workplace-game-strategy\
+# Windows: 复制 SKILL.md 与 references/ 到 %USERPROFILE%\.codex\skills\workplace-game-strategy\
 # macOS/Linux:
-mkdir -p ~/.codex/skills/workplace-game-strategy && cp SKILL.md ~/.codex/skills/workplace-game-strategy/
+mkdir -p ~/.codex/skills/workplace-game-strategy && cp -r SKILL.md references ~/.codex/skills/workplace-game-strategy/
 ```
 
 安装后直接描述你的处境即可触发，例如："我是高校老师，领导把全院报销的活都塞给我，怎么办？"

@@ -13,6 +13,8 @@
 
 A strategy-analysis skill for agents that support the [Agent Skills open standard](https://agentskills.io) (Claude Code, Codex, and others). When you face structural conflicts at work — excessive task dumping, withheld pay or bonuses, performance-review threats, credit theft, forced resignation — it doesn't give you "just get along" platitudes. It maps your situation as a game: **what cards you actually hold, what preconditions your counterpart's weapons depend on, which card to play first and which to hold forever.**
 
+**Bilingual**: the skill switches by the language you write in — Chinese questions use the Chinese framework (`SKILL.md`); any other language automatically loads the English framework (`references/SKILL_EN.md`) and responds entirely in your language.
+
 ## Core frameworks
 
 **Two user types, two playbooks — classify before advising:**
@@ -78,25 +80,25 @@ cd workplace-game-strategy
 **Claude Code**
 
 ```bash
-# Project-level (recommended): copy into your project's .claude/skills/workplace-game-strategy/
-mkdir -p .claude/skills/workplace-game-strategy && cp SKILL.md .claude/skills/workplace-game-strategy/
+# Project-level (recommended): copy SKILL.md AND references/ into your project's .claude/skills/workplace-game-strategy/
+mkdir -p .claude/skills/workplace-game-strategy && cp -r SKILL.md references .claude/skills/workplace-game-strategy/
 
 # User-level (available in all projects)
-# Windows: copy the folder containing SKILL.md to %USERPROFILE%\.claude\skills\workplace-game-strategy\
+# Windows: copy SKILL.md and references/ to %USERPROFILE%\.claude\skills\workplace-game-strategy\
 # macOS/Linux:
-mkdir -p ~/.claude/skills/workplace-game-strategy && cp SKILL.md ~/.claude/skills/workplace-game-strategy/
+mkdir -p ~/.claude/skills/workplace-game-strategy && cp -r SKILL.md references ~/.claude/skills/workplace-game-strategy/
 ```
 
 **Codex (OpenAI)**
 
 ```bash
 # Project-level (recommended): copy into your project's .codex/skills/workplace-game-strategy/
-mkdir -p .codex/skills/workplace-game-strategy && cp SKILL.md .codex/skills/workplace-game-strategy/
+mkdir -p .codex/skills/workplace-game-strategy && cp -r SKILL.md references .codex/skills/workplace-game-strategy/
 
 # User-level
-# Windows: copy the folder containing SKILL.md to %USERPROFILE%\.codex\skills\workplace-game-strategy\
+# Windows: copy SKILL.md and references/ to %USERPROFILE%\.codex\skills\workplace-game-strategy\
 # macOS/Linux:
-mkdir -p ~/.codex/skills/workplace-game-strategy && cp SKILL.md ~/.codex/skills/workplace-game-strategy/
+mkdir -p ~/.codex/skills/workplace-game-strategy && cp -r SKILL.md references ~/.codex/skills/workplace-game-strategy/
 ```
 
 Then just describe your situation, e.g. "I'm a university lecturer and my dean dumped the whole department's expense-report work on me — what do I do?"
