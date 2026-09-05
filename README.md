@@ -1,5 +1,9 @@
 # workplace-game-strategy
 
+<p align="center">
+  <img src="assets/logo.png" alt="workplace-game-strategy logo" width="720">
+</p>
+
 > 职场权力博弈策略分析 —— 一个 Claude Code Skill。
 > 用博弈论拆解"怎么和领导相处"：目标不是赢一场冲突，而是在长期重复博弈中改善你的结构性处境。
 
